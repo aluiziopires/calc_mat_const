@@ -12,7 +12,7 @@ public class Tarefas_e_produtividade {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner (System.in);
-		String data;
+		String data, unidade;
 		
 		Tarefas tarefa = new Tarefas();
 				
@@ -24,7 +24,7 @@ public class Tarefas_e_produtividade {
 		System.out.print("Tarefa programada: ");
 		tarefa.tarefa=sc.nextLine();
 		System.out.print("Unidade de medida: ");
-		tarefa.unidade=sc.nextLine();
+		unidade=sc.nextLine();
 		
 		System.out.print("Quantitativo programado da tarefa: ");
 		tarefa.quantitativoprog=sc.nextDouble();
@@ -36,19 +36,34 @@ public class Tarefas_e_produtividade {
 		tarefa.funcionarios=sc.nextDouble();
 		System.out.print("Horas trabalhadas: ");
 		tarefa.horasTrabalhadas=sc.nextDouble();
-				
+		
+		System.out.println(" ");
+		
 		System.out.println("Relatório final:");
 		System.out.println(" ");
 		System.out.println("Tarefa executada em " +data+ ": " +tarefa.tarefa);
-		System.out.println("Quantidade programada: " +tarefa.quantitativoprog);
-		System.out.println("Quantidade executada: " +tarefa.quantitativoexec);
+		System.out.printf("Quantidade programada: %.2f%n", tarefa.quantitativoprog);
+		System.out.printf("Quantidade executada: %.2f%n", tarefa.quantitativoexec);
 		System.out.printf("Percentual executado da tarefa programada: %.2f%n", tarefa.percentualexec());
+		
+		System.out.println(" ");
+		
+		if (tarefa.percentualexec()<100) {
+			System.out.println("Atenção!!! A tarefa programada não foi completamente executada.");
+		}
+			else {
+				System.out.println("A tarefa programada foi completamente executada.");	
+		}
+		
+		System.out.println(" ");
+		
 		System.out.printf("Quantidade total de funcionários: %.2f%n", tarefa.funcionarios);
 		System.out.printf("Quantidade de horas trabalhadas por funcionário: %.2f%n", tarefa.horasTrabalhadas);
 		System.out.printf("Quantidade total de horas trabalhadas: %.2f%n", tarefa.totalhoras());
-		System.out.printf("Produtividade média por funcionário: %.2f%n", tarefa.produtividadefuncionario()+tarefa.unidade);
-		System.out.printf("Produtividade média por hora: %.2f%n", tarefa.produtividadehora()+tarefa.unidade);
+		System.out.printf("Produtividade média por funcionário: %.2f%n", tarefa.produtividadefuncionario());
+		System.out.printf("Produtividade média por hora: %.2f%n", tarefa.produtividadehora());
 		
+
 	sc.close();
 	}
 }
