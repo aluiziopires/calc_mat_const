@@ -33,6 +33,7 @@ public class Calculadora {
 		if (etapa==1) {
 			System.out.print("Quantidade a ser executada (m²): ");
 			quantExec=sc.nextDouble();
+			System.out.println(" ");
 			System.out.println("Materiais necessários para execução:");	
 			System.out.println(" ");
 			System.out.println("1 - Tijolo");
@@ -43,6 +44,7 @@ public class Calculadora {
 			if (etapa==2) {
 				System.out.print("Quantidade a ser executada (m²): ");
 				quantExec=sc.nextDouble();
+				System.out.println(" ");
 				System.out.println("Materiais necessários para execução:");	
 				System.out.println(" ");
 				System.out.println("1 - Massa de cimento e areia (traço 1:4)");	
@@ -52,6 +54,7 @@ public class Calculadora {
 				if (etapa==3) {
 					System.out.print("Quantidade a ser executada (m²): ");
 					quantExec=sc.nextDouble();
+					System.out.println(" ");
 					System.out.println("Materiais necessários para execução:");	
 					System.out.println(" ");
 					System.out.println("1 - Massa de cimento e areia (traço 1:4)");	
@@ -61,6 +64,7 @@ public class Calculadora {
 					if (etapa==4) {
 						System.out.print("Quantidade a ser executada (m²): ");
 						quantExec=sc.nextDouble();
+						System.out.println(" ");
 						System.out.println("Materiais necessários para execução:");	
 						System.out.println(" ");
 						System.out.println("1 - Cerâmica");	
@@ -73,6 +77,7 @@ public class Calculadora {
 						if (etapa==5) {
 							System.out.print("Quantidade a ser executada (m²): ");
 							quantExec=sc.nextDouble();
+							System.out.println(" ");
 							System.out.println("Materiais necessários para execução:");	
 							System.out.println(" ");
 							System.out.println("1 - Selador");	
