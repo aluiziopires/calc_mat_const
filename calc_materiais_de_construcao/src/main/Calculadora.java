@@ -3,6 +3,9 @@ package main;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Materiais;
+import entities.Materias;
+
 public class Calculadora {
 
 	public static void main(String[] args) {
@@ -11,13 +14,15 @@ public class Calculadora {
 		Scanner sc = new Scanner (System.in);
 		
 		int etapa;
-		double quantExec;
+				
+		Materiais material = new Materiais();
 		
 		System.out.println("Calculadora de materiais de construção:");
 		System.out.println(" ");
 		
 		do {
 		
+		etapa=0;
 		System.out.println("Selecione a etapa atual da sua obra:");
 		System.out.println(" ");
 		System.out.println("1 - Alvenaria");
@@ -30,63 +35,104 @@ public class Calculadora {
 		System.out.print("Digite a etapa desejada: ");
 		etapa=sc.nextInt();
 		System.out.println(" ");
+		
 		if (etapa==1) {
 			System.out.print("Quantidade a ser executada (m²): ");
-			quantExec=sc.nextDouble();
+			material.quantExec=sc.nextDouble();
 			System.out.println(" ");
 			System.out.println("Materiais necessários para execução:");	
 			System.out.println(" ");
-			System.out.println("1 - Tijolo");
-			System.out.println("2 - Massa de cimento e areia (traço 1:4)");
+			System.out.printf("1 - Tijolo: "+ material.quantTijolo()+ " unidades");
 			System.out.println(" ");
-				}
+			System.out.println(" ");
+			System.out.println("2 - Massa de cimento e areia (traço 1:3)");
+			System.out.println(" ");
+			System.out.printf("Cimento: "+ material.quantCimentoAlv()+ " Kg");
+			System.out.println(" ");
+			System.out.println(" ");
+			System.out.printf("Areia: "+ material.quantAreiaAlv()+ " m³");
+			System.out.println(" ");
+			System.out.println(" ");
+			}
+				
 		else {
+			
 			if (etapa==2) {
 				System.out.print("Quantidade a ser executada (m²): ");
-				quantExec=sc.nextDouble();
+				material.quantExec=sc.nextDouble();
 				System.out.println(" ");
 				System.out.println("Materiais necessários para execução:");	
 				System.out.println(" ");
-				System.out.println("1 - Massa de cimento e areia (traço 1:4)");	
+				System.out.println("1 - Massa de cimento e areia (traço 1:5)");	
 				System.out.println(" ");
-					}	
+				System.out.printf("Quantidade de cimento: "+ material.quantCimentoContra()+ " Kg");
+				System.out.println(" ");
+				System.out.println(" ");
+				System.out.printf("Quantidade de areia: "+ material.quantAreiaContra()+ " m³");
+				System.out.println(" ");
+				System.out.println(" ");
+				}	
 			else {
+				
 				if (etapa==3) {
 					System.out.print("Quantidade a ser executada (m²): ");
-					quantExec=sc.nextDouble();
+					material.quantExec=sc.nextDouble();
 					System.out.println(" ");
 					System.out.println("Materiais necessários para execução:");	
 					System.out.println(" ");
 					System.out.println("1 - Massa de cimento e areia (traço 1:4)");	
 					System.out.println(" ");
-						}
+					System.out.printf("Quantidade de cimento: "+ material.quantCimentoReboco()+ " Kg");
+					System.out.println(" ");
+					System.out.println(" ");
+					System.out.printf("Quantidade de areia: "+ material.quantAreiaReboco()+ " m³");
+					System.out.println(" ");
+					System.out.println(" ");
+					}
 				else {
+					
 					if (etapa==4) {
 						System.out.print("Quantidade a ser executada (m²): ");
-						quantExec=sc.nextDouble();
+						material.quantExec=sc.nextDouble();
 						System.out.println(" ");
 						System.out.println("Materiais necessários para execução:");	
 						System.out.println(" ");
-						System.out.println("1 - Cerâmica");	
+						System.out.printf("1 - Cerâmica: "+ material.quantCeramica()+ " m²");
+						System.out.println(" ");
+						System.out.println(" ");
 						System.out.println("2 - Argamassa colante");
-						System.out.println("3 - Espaçador plástico");
-						System.out.println("4 - Rejunte");
+						System.out.printf("Para colagem simples: "+ material.quantArgColanteSimples()+ " Kg");
+						System.out.println(" ");
+						System.out.printf("Para colagem dupla: "+ material.quantArgColanteDupla()+ " Kg");
+						System.out.println(" ");
+						System.out.println(" ");
+						System.out.printf("3 - Rejunte: "+ material.quantRejunte()+ " Kg");
+						System.out.println(" ");
 						System.out.println(" ");
 							}
 					else {
+						
 						if (etapa==5) {
 							System.out.print("Quantidade a ser executada (m²): ");
-							quantExec=sc.nextDouble();
+							material.quantExec=sc.nextDouble();
 							System.out.println(" ");
 							System.out.println("Materiais necessários para execução:");	
 							System.out.println(" ");
-							System.out.println("1 - Selador");	
-							System.out.println("2 - Massa corrida");
-							System.out.println("3 - Tinta");
+							System.out.printf("1 - Selador: "+ material.quantSelador()+ " Litros");
+							System.out.println(" ");
+							System.out.println(" ");
+							System.out.printf("2 - Massa corrida: "+ material.quantMassaCor()+ " Kg");
+							System.out.println(" ");
+							System.out.println(" ");
+							System.out.printf("3 - Tinta: "+ material.quantTinta()+ " Litros");
+							System.out.println(" ");
 							System.out.println(" ");
 								}
+						
 						else {
+							
 							System.out.print("Programa finalizado!");	
+							
 						}
 					}
 				}
