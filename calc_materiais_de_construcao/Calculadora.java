@@ -154,9 +154,7 @@ public class Calculadora {
 				}
 			}
 		}
-		
-		
-		
+			
 		}while (etapa!=6);
 		
 		sc.close();	
